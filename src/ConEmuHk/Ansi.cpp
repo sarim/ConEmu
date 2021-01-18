@@ -3015,10 +3015,11 @@ CSI P s @			Insert P s (Blank) Character(s) (default = 1) (ICH)
 				// xterm: clear scrollback buffer entirely
 				if (csbi.srWindow.Top > 0)
 				{
-					nScroll = -csbi.srWindow.Top;
-					cr0.X = csbi.dwCursorPosition.X;
-					cr0.Y = static_cast<SHORT>(std::max(0, (csbi.dwCursorPosition.Y - csbi.srWindow.Top)));
+					cr0.X = 0;
+					cr0.Y = 0;
+					nChars = csbi.dwSize.X * csbi.dwSize.Y;
 					resetCursor = true;
+					break;
 				}
 				break;
 			default:
