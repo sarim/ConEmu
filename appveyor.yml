@@ -23,4 +23,6 @@ build:
 test_script:
 - cmd: >-
     call "%Configuration%\Tests_%Configuration%_%Platform%.exe"
+artifacts:
+  - path: %Configuration%
 deploy: off
